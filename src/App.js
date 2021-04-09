@@ -9,6 +9,9 @@ function App() {
       <header> 
         <Header/>
       </header>
+      <main>
+        
+      </main>
     Harry Potter
     </div>;
     </Router>
