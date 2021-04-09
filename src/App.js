@@ -6,14 +6,17 @@ function App() {
   return (
     <Router> 
     <div className="App">
-      <header> 
+      <header className="Header"> 
         <Header/>
       </header>
-      <main>
-        
+      <main className="Main">
+
       </main>
     Harry Potter
-    </div>;
+    </div>
+    <footer className="Footer">
+
+    </footer>
     </Router>
   )
 }
