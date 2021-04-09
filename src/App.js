@@ -2,8 +2,9 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Character from "./components/Character";
+import Characterlist from "./components/Character";
 import Footer from "./components/Footer";
+import SingleCharacter from "./components/SingleCharacter";
 
 function App() {
   return (
@@ -13,9 +14,14 @@ function App() {
         <Header/>
       </header>
       <main className="Main">
+      <Switch>
+          <Route path="/character/:id">
+          <SingleCharacter/>
+          </Route>
+        </Switch>
         <Switch>
           <Route path="/character">
-          <Character/>
+          <Characterlist/>
           </Route>
         </Switch>
         <Switch>

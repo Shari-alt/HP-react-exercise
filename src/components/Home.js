@@ -1,3 +1,4 @@
+import ExpectoPatronum from "..image/ExpectoPatronum.svg";
 export default function Home () {
     return (
         <div>
