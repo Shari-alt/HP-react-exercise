@@ -3,6 +3,23 @@
   display: grid;
   place-items: center;
   color: #04b1c5;
-  background-color: #111440;
+  /* background-color: #111440; */
   font-size: 2em;
+  grid-template-columns: [width] 100vw;
+  grid-template-rows: [header] 100px [main] auto [footer] 80px;
+}
+
+.Header {
+  grid-column: width;
+  grid-row: header;
+}
+
+.Main {
+  grid-column: width;
+  grid-row: main;
+}
+
+.Footer {
+  grid-column: width;
+  grid-row: footer;
 }
