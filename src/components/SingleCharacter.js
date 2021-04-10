@@ -1,39 +1,27 @@
-// export default function SingleCharacter ({name, patronus, house, species, image}) {
-//     return (
-//         <section className="SingleUser">
-//             <h2> {name} </h2>
-//             <p> {patronus}</p>
-//             <p> {house}</p>
-//             <p> {species}</p>
-//             <img src={image} alt={name} />
-//         </section>
+import { useParams, useHistory } from "react-router-dom";
+import {useEffect, useState } from "react";
 
-//     )
-// }
-
-// function SingleCharacter ({name, patronus, house, species, image}) {
-function SingleCharacter () {
+export default function SingleCharacter () {
     const {id} = useParams();
-    const [character, setCharacter] = useState({}) 
+    const [characters, setCharacters] = useState({});
+    const history = useHistory();
     
     useEffect(() => {
         const url = `http://hp-api.herokuapp.com/api/characters/${id}`;
-    fetch(url)
-    .then((res) => res.json())
-    .then((data)=> {
-        setCharacter(data)
-    })
 
+        fetch(url)
+            .then((res) => res.json())
+            .then((dataFromApi) => {
+                setCharacters(dataFromApi.results);
+            });
     }, [id]);
     
     return (
-        <section className="SingleUser">
-            <h2> {name} </h2>
-            <p> {patronus}</p>
-            <p> {house}</p>
-            <p> {species}</p>
-            <img src={image} alt={name} />
+        <section className="SingleCharacter">
+            {id}
+            <img src={characters.image} alt={characters.name} />
+            <h2> {characters.name} </h2>
+            <button onClick={() => history.goBack()}> Back </button>
         </section>
-
-    )
+    );
 }
