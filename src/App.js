@@ -18,13 +18,9 @@ function App() {
           <Route path="/character/:id">
           <SingleCharacter/>
           </Route>
-        </Switch>
-        <Switch>
           <Route path="/character">
           <Characterlist/>
           </Route>
-        </Switch>
-        <Switch>
           <Route path="/">
           <Home/>
           </Route>
