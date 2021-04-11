@@ -2,7 +2,33 @@
   margin-right: 0.5em;
 }
 
-.Search input,
-.Search button {
+.Search input {
   width: 100%;
+}
+
+.Search {
+  display: flex;
+  width: 50%;
+  background-color: #111440;
+  border-radius: 50px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.Form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Name {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin-right: 30px;
+}
+
+.Status {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
 }

@@ -1,0 +1,12 @@
+.Footer {
+  /* Footer tag */
+  background-color: #111440;
+  width: 100vw;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+}
+
+.footerText {
+  margin: auto;
+}

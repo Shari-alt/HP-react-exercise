@@ -1,5 +1,6 @@
+import "./Footer.css"
 export default function Footer () {
     return (
-       <p>Made by a snuggle muggle. </p> 
+       <p className="footerText">"TO LIVE IT TO RISK IT ALL" - Rick </p> 
     ) 
 }

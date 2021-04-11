@@ -18,7 +18,6 @@ export default function SingleCharacter () {
     }, [id]);
     
     function Type () {
-       
         if ( characters.type !=="") {
             return <p> Type: {characters.type}</p> 
         } 

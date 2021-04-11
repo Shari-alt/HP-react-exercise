@@ -12,13 +12,14 @@ export default function Filter({onNameFilterChange, onStatusFilterChange}) {
     }
 
     return (
-        <div className="NameSearch">
-        <form className="Search" onSubmit={handleOnSubmitName}>
-            <div> 
-            <p className="TitleSearch"> Name: </p>
+        <div className="Search">
+        <form className="Form" onSubmit={handleOnSubmitName}>
+            <div className="Name"> 
+            <label className="LabelName"> Name: </label>
             <input id="nameinput" name="nameinput" type="search" placeholder="Who are you looking for?" />
             <button type="submit" className="filterButton"> Let's have a look!</button>
-            </div>
+            </div> 
+            <div className="Status"> 
             <label htmlFor="status"> Status: </label>
             <select onClick={handleOnStatus} name="status">
                 <option value="all"> All</option>
@@ -26,8 +27,8 @@ export default function Filter({onNameFilterChange, onStatusFilterChange}) {
                 <option value="Dead"> Dead</option>
                 <option value="unknown"> unknown</option>
             </select>
+            </div>
         </form>
        </div>
-
     )
 }

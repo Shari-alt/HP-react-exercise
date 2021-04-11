@@ -1,6 +1,7 @@
 import  { useState,  useEffect } from "react";
 import { Link } from "react-router-dom";
 import Filter from "./Filter";
+import "./Character.css";
 
 
 function Characterlist () {
@@ -61,12 +62,12 @@ function renderCharacters () {
     .map((character) => {
         const { name, id, image} = character;
         return (
-            <li key={id}>
+            <ul key={id} className={`renderCharacter ${character.status}`}>
                 <Link to={`/characters/${id}`}>
                 <img src={image} alt={name} />
                 <h3>{name}</h3>
                 </Link>
-            </li>
+            </ul>
         );
     });
 }
@@ -74,9 +75,9 @@ function renderCharacters () {
 
 
 return (
-    <div>
-        <Filter onNameFilterChange={onNameFilterChange} onStatusFilterChange={onStatusFilterChange} />
+    <div className="CharacterList">
         <h2> This is the wonderful world of Rick and Morty</h2>
+        <Filter onNameFilterChange={onNameFilterChange} onStatusFilterChange={onStatusFilterChange} />
         {renderCharacters()}
         {page < totalPages && (
         <button onClick={handleLoadMore}>  Want to see more? </button>
