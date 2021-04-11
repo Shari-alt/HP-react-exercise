@@ -1,0 +1,8 @@
+.Search input {
+  margin-right: 0.5em;
+}
+
+.Search input,
+.Search button {
+  width: 100%;
+}
