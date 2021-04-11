@@ -1,27 +1,26 @@
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, /*useHistory */} from "react-router-dom";
 import {useEffect, useState } from "react";
 
 export default function SingleCharacter () {
     const {id} = useParams();
     const [characters, setCharacters] = useState({});
-    const history = useHistory();
+    // const history = useHistory();
     
     useEffect(() => {
-        const url = `http://hp-api.herokuapp.com/api/characters/${id}`;
+        const url = `https://rickandmortyapi.com/api/character/${id}`;
 
         fetch(url)
             .then((res) => res.json())
             .then((dataFromApi) => {
-                setCharacters(dataFromApi.results);
+                setCharacters(dataFromApi);
             });
     }, [id]);
     
     return (
         <section className="SingleCharacter">
-            {id}
             <img src={characters.image} alt={characters.name} />
             <h2> {characters.name} </h2>
-            <button onClick={() => history.goBack()}> Back </button>
+            {/* <button onClick={() => history.goBack()}> Back </button> */}
         </section>
     );
 }

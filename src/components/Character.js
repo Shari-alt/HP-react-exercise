@@ -1,8 +1,9 @@
-import useState, { useEffect } from "react";
+import  { useState,  useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
-export default function Characterlist () {
-   const [page, setPage] = useState();
+function Characterlist () {
+   const [page, setPage] = useState(1);
    const[totalPages, setTotalPages] = useState();
    const [characters, setCharacters]=useState([]); /* Why the '[]'?*/ 
 
@@ -15,7 +16,7 @@ export default function Characterlist () {
          setCharacters((prevUsers) => {
              return [...prevUsers, ...dataFromApi.results];
             });
-            setTotalPages(dataFromApi.pages);
+            setTotalPages(dataFromApi.info.pages);
         });
 }, [page]);
 
@@ -25,8 +26,9 @@ function renderCharacters () {
 
         return (
             <li key={id}>
-                <Link to={`/character/${id}`}>
-                    {name} {image}
+                <Link to={`/characters/${id}`}>
+                <img src={image} alt={name} />
+                <h3>{name}</h3>
                 </Link>
             </li>
         );
@@ -42,14 +44,15 @@ function handleLoadMore(){
 return (
     <div>
         <h2> This is the wonderful world of Rick and Morty</h2>
-        <ul> {renderCharacters} </ul>
-        {page <totalPages && (
-            <button onClick={handleLoadMore}> Want to see more? </button>
+        {renderCharacters()}
+        {page < totalPages && (
+        <button onClick={handleLoadMore}>  Want to see more? </button>
         )}
     </div>
 );
 }
 
+export default Characterlist;
 
     
    

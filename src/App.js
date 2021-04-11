@@ -15,14 +15,14 @@ function App() {
       </header>
       <main className="Main">
       <Switch>
-          <Route path="/character/:id">
+          <Route exact path="/">
+          <Home/>
+          </Route>
+          <Route path="/characters/:id">
           <SingleCharacter/>
           </Route>
-          <Route path="/character">
+          <Route path="/characters">
           <Characterlist/>
-          </Route>
-          <Route path="/">
-          <Home/>
           </Route>
         </Switch>
       </main>
