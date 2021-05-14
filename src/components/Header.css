@@ -1,6 +1,6 @@
 .Header {
   /* Header tag */
-  background-color: silver;
+  background-color: #111440;
   width: 100vw;
   margin: 0 auto;
   height: 100%;
@@ -9,7 +9,7 @@
 .Logo {
   /* Logo tag */
   height: 70px;
-  width: 70px;
+  width: auto;
   margin-left: 50px;
 }
 
